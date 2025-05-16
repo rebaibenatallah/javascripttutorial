@@ -1,5 +1,5 @@
 // 1. Create a variable , x and set its value 
-let x = 12
+let x = 0
 // ==========================================
 // 2. Log the x variable to the console
 console.log('x =',x)
@@ -28,12 +28,12 @@ document.getElementById('math-round').innerHTML = 'Math.round(3.452) expected ou
 // Adding a button to incrementing h2
 let count = parseInt(document.getElementById("count-el").innerHTML)
 function increment() {
-    count = count +1
-    document.getElementById('count-el').innerHTML = count  
-    // create a popup 
-    if(count == 14){
-        alert('hello 14')
-    }
+  count = count +1
+  document.getElementById('count-el').innerHTML = count  
+  // create a popup 
+  if(count == 14){
+    alert('hello 14')
+  }
 }
 // ================================= math opertations
 // Strings 'rext'==================
@@ -64,5 +64,6 @@ here`)
 // 4. escape character \' \" \n
 console.log('some\ntext')
 // ================================
-    
-// https://www.freecodecamp.org/news/full-javascript-course-for-beginners/
+// HTML:creates the content,CSS:changes the appearance,JavaScript:makes it intractive 
+
+

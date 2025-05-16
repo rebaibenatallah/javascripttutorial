@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans and if-Statements</title>
+</head>
+<body>
+  <h2>Rock Paper Scissors</h2>
+  <button onclick="game('Rock')">Rock</button>
+  <button onclick="game('Paper')">Paper</button>
+  <button onclick="game('Scissors')">Scissors</button>
+  <script>
+    console.log(typeof true);
+    console.log(typeof false);
+    console.log(4 < 6)
+    // Comparison Operators
+    //  > greater than
+    //  < less than
+    // >= greater than or equal to
+    //  <= less than or equal to
+    // === equal to
+    // !== not equal to
+
+    if(true ){
+      console.log('hello');
+    }else{
+      console.log('else');
+    }
+
+    if(15 >= 16 ){
+      console.log("You can drive");
+    }else{
+      console.log("you can not drive");
+    }
+    //  Rock Paper Scissors Code
+    function game(result){
+      let mylist = ['Rock','Paper','Scissors'];
+      console.log(result);
+      let rend = mylist[(Math.random() * mylist.length) | 0] 
+      if( result === 'Rock'){
+        if(rend === 'Rock'){
+          alert('You picked Rock, Computer picked Rock. ');
+        }else if(rend === 'Paper'){
+          alert('You picked Rock, Computer picked Paper. You lose.');
+        }else{
+          alert('You picked Rock, Computer picked Scissors. You winn');
+        }
+      }else if(result ==='Paper'){
+        if(rend === 'Rock'){
+          alert('You picked Paper, Computer picked Rock. You winn');
+        }else if(rend === 'Paper'){
+          alert('You picked Paper, Computer picked Paper. ');
+        }else{
+          alert('You picked Paper, Computer picked Scissors. You lose');
+        }
+      }else{
+        if(rend === 'Rock'){
+          alert('You picked Scissors, Computer picked Rock. You lose');
+      }else if(rend === 'Paper'){
+        alert('You picked Scissors, Computer picked Paper. You winn');
+      }else{
+        alert('You picked Scissors, Computer picked Scissors. ');
+      }}
+    }
+
+  </script>
+</body>
+</html>

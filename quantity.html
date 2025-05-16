@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quantity</title>
+</head>
+<body>
+  <h2>Cart Quantity </h2>
+  <button onclick="show_quantity()">Show Quantity</button>
+  <button onclick="add_Cart()">Add to Cart</button>
+  <button onclick="add_2()">+2</button>
+  <button onclick="add_3()">+3</button>
+  <button onclick="reset()">Reset Cart</button>
+  <script>
+    let variable = 0;
+    function show_quantity(){
+      console.log(`Cart quantity: ${variable}`);
+    }
+    function add_Cart(){
+      variable++;
+      console.log(`Cart quantity: ${variable}`);
+    }
+    function add_2(){
+      variable += 2;
+      console.log(`Cart quantity: ${variable}`);
+    }
+    function add_3(){
+      variable +=3;
+      console.log(`Cart quantity: ${variable}`);
+    }
+    function reset(){
+      variable = 0;
+      console.log("Cart was reset .");
+    }
+    // Variable Re-assignment Shortcuts
+    // +=  variable = variable + 2
+    // -=  variable = variable - 2
+    // *=  variable = variable * 2
+    // /=  variable = variable / 2
+    // ++  variable = variable + 1
+    // --  variable = variable - 1
+    // Nameing Conventions
+    // camelCase
+    // PascalCase
+    // kebab-case
+    // snake_case
+  </script>
+</body>
+</html>
