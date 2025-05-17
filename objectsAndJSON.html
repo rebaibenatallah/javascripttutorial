@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>objects</title>
+</head>
+<body>
+  <script>
+    let product = {
+      name: 'socks',
+      price: 1000
+    };
+    console.log(product);
+    console.log(product.name);
+    product.name = 'cotton socks';
+    console.log(product);
+    product.newProperty = true;
+    console.log(typeof product.newProperty);
+    console.log(product);
+    delete product.newProperty;
+    console.log(product);
+    console.log(typeof product);
+    console.log(typeof product.name);
+    console.log(typeof product.price);
+
+    const product2 = {
+      name: 'shirt',
+      'delivery-time': ' 1 day',
+      reting:{
+        stars:4.5,
+        count:87
+      },
+      fun: function function1(){
+        console.log('function inside object = Method');
+      }
+    }
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);
+    console.log(product2['delivery-time']);
+    console.log(product2.reting.stars);
+    product2.fun();
+
+    // JSON : JavaScript Object Notation
+    //  - a syntax
+    //  - similar to JavaScript object
+    //  - but has less features
+    // We use JSON
+    //  - when we send data between computers
+
+    // Convert JavaScript Object to JSON
+    const jsonString = JSON.stringify(product2);
+    console.log(jsonString);
+    // convert JSON to javaScript object
+    console.log(JSON.parse(jsonString));
+
+
+    /*
+    Auto-Boxing special object string
+    */
+   console.log('hello'.length);
+   console.log('hello'.toUpperCase());
+   console.log(15.0.toString());
+   console.log(true.toString());
+
+   /*
+   Reference 
+   const object1 = reference
+   */
+  const object1 ={
+    message: 'hello'
+  };
+  const object2 = object1;
+  console.log(object2.message);
+  object1.message = 'good job!';
+  console.log(object2.message);
+  // object1 and object2 pint to the same object in the memory
+
+  // Shortcuts for Objects
+  // destructuring 
+  //  - easier way to take properties put fo an object
+  const object3 = {
+    message: 'good job3!',
+    price: 855
+  };
+  // const message = object3.message;
+  const {message,price}= object3;
+  // const {price} = object3;
+  console.log(message);
+  console.log(price);
+
+  // ======== Shorthand Property
+  const object4 = {
+    message,
+    method(){
+      console.log('method');
+    }
+  }
+  console.log(object4);
+  object4.method();
+  </script>
+</body>
+</html>

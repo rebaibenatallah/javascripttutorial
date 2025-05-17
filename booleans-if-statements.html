@@ -11,6 +11,8 @@
   <button onclick="game('Rock')">Rock</button>
   <button onclick="game('Paper')">Paper</button>
   <button onclick="game('Scissors')">Scissors</button>
+  <button onclick="reset()">Reset Score</button>
+  <h2 id="result">Wins: 0, Losses: 0, Ties: 0</h2>
   <script>
     console.log(typeof true);
     console.log(typeof false);
@@ -35,35 +37,68 @@
       console.log("you can not drive");
     }
     //  Rock Paper Scissors Code
+    const Result = {
+      wins:0,
+      losses:0,
+      ties:0
+    }
+    function reset(){
+      Result.wins = 0;
+      Result.losses = 0;
+      Result.ties = 0;
+      document.getElementById('result').innerHTML = `Wins: ${Result.wins}, Losses: ${Result.losses}, Ties: ${Result.ties}`
+    }
     function game(result){
       let mylist = ['Rock','Paper','Scissors'];
       console.log(result);
       let rend = mylist[(Math.random() * mylist.length) | 0] 
       if( result === 'Rock'){
         if(rend === 'Rock'){
-          alert('You picked Rock, Computer picked Rock. ');
+          alert(`You picked ${result}, Computer picked ${Result.rend}. Tie`);
+          Result.ties++;
         }else if(rend === 'Paper'){
-          alert('You picked Rock, Computer picked Paper. You lose.');
+          alert(`You picked ${result}, Computer picked ${Result.rend}. You lose.`);
+          Result.losses++;
         }else{
-          alert('You picked Rock, Computer picked Scissors. You winn');
+          alert(`You picked ${result}, Computer picked ${Result.rend}. You winn`);
+          Result.wins++;
         }
       }else if(result ==='Paper'){
         if(rend === 'Rock'){
-          alert('You picked Paper, Computer picked Rock. You winn');
+          alert(`You picked ${result}, Computer picked ${Result.rend}. You winn`);
+          Result.wins++;
         }else if(rend === 'Paper'){
-          alert('You picked Paper, Computer picked Paper. ');
+          alert(`You picked ${result}, Computer picked ${Result.rend}. Tie`);
+          Result.ties++;
         }else{
-          alert('You picked Paper, Computer picked Scissors. You lose');
+          alert(`You picked ${result}, Computer picked ${Result.rend}. You lose`);
+          Result.losses++;
         }
       }else{
         if(rend === 'Rock'){
-          alert('You picked Scissors, Computer picked Rock. You lose');
+          alert(`You picked ${result}, Computer picked ${Result.rend}. You lose`);
+          Result.losses++;
       }else if(rend === 'Paper'){
-        alert('You picked Scissors, Computer picked Paper. You winn');
+        alert(`You picked ${result}, Computer picked ${Result.rend}. You winn`);
+        Result.wins++;
       }else{
-        alert('You picked Scissors, Computer picked Scissors. ');
+        alert(`You picked ${result}, Computer picked ${Result.rend}. Tie`);
+        Result.ties++;
       }}
+      document.getElementById('result').innerHTML = `Wins: ${Result.wins}, Losses: ${Result.losses}, Ties: ${Result.ties}`
     }
+    // if(result){result= "truthy"}else{result = "falsy"} Shortcut :
+    let result = true ? 'truthy' : 'falsy';
+    result = false;
+    console.log('result :' + result);
+    // if(conditon){console.log('hello')} Shortcut :
+    false && console.log("hello")
+    // if(condition){message= 'hello'} Shortcut:
+    let message = 5 && 'hello message';
+    console.log(message);
+    // if(!condition){result = 5;} Shortcut
+    result = false || 5;
+    console.log('or operation result :'+ result);
 
   </script>
 </body>

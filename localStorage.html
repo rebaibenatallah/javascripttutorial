@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalStorage</title>
+</head>
+<body>
+  <button onclick="inc()">increment</button>
+  <button onclick="
+  localStorage.removeItem('score');
+  score.val=0;
+  ">delete</button>
+  <script>
+    let score = JSON.parse(localStorage.getItem('score')) || { val:0};
+
+    // if (!score){
+    //   score = {
+    //   val:0
+    //   };
+    // }
+    function inc(){
+      score.val++;
+      localStorage.setItem('score',JSON.stringify(score));
+      console.log(JSON.parse(localStorage.getItem('score')));
+    }
+  </script>
+</body>
+</html>

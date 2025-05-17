@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+</head>
+<body>
+  <button>hello</button>
+  <button class="js-button">Second button</button>
+
+  <h1>YouTube Subscribe Button</h1>
+  <button class="subscribe" onclick="
+  document.querySelector('.subscribe').innerHTML = 'Subscribed';
+  ">Subscribe</button>
+  <h1>Rock Paper Scissors</h1>
+  <a href="">Click here</a>
+  <h1>Amazon Shipping Calculator</h1>
+  <h1>Orders under $40 = +$10 shipping.</h1>
+  <h1>Orders over $40 = FREE shipping.</h1>
+  <input class="input" type="text" placeholder="Cost of order">
+  <button onclick="calculate()">Calculate</button>
+  <h1 class="result"></h1>
+  <br>
+  <a href="">CSS version of these projects</a>
+  <script>
+    // ==== the document object represents / models the webpage
+    console.log(document.title);
+    document.title='Changed';
+    console.log(document.body);
+    console.log(typeof document.body);
+    console.log( document.body.innerHTML);
+    // document.body.innerHTML = `<h1>Good Job!</h1>`;
+    document.title = 'Good Job!';
+
+    // ==== document.querySelector()
+    //  -lets us get any element from the page and put it inside JavaScript
+    console.log(document.querySelector('button'));
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button').innerHTML = 'changet querySelector';
+    console.log(document.querySelector('.js-button').innerHTML);
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+    function calculate(){
+      let val = Number(document.querySelector('.input').value);
+      if(val < 40){
+        document.querySelector('.result').innerHTML = '$' + (val + 10);
+      }else{
+        document.querySelector('.result').innerHTML = '$'+ (val);
+      }
+    }
+  </script>
+</body>
+</html>
