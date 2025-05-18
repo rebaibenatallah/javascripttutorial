@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <div class="content"></div>
+  <script>
+    let todoListHTML = '';
+    const myTable = [
+      {
+        name: "ben",
+        date: "2025-05-19"
+      },
+      {
+        name: "rebai",
+        date: "2025-05-26"
+      },
+      {
+        name: "emy",
+        date: "2025-05-07"
+      },
+    ].forEach(function(todoObject,index){
+      const {name,date} = todoObject;
+      const html = `
+      <div>${name}</div>
+      <div>${date}</div>
+      <button>Delete</button>
+      `;
+      todoListHTML += html;
+    });
+      document.querySelector('.content').innerHTML = todoListHTML;
+    function greeting(){
+      console.log('hello greeting');
+    };
+    greeting();
+    const function1 = function(){
+      console.log('hello function 2');
+    };
+    function1();
+    console.log(typeof function1);
+    // - save avalue in an object
+    // method : function saved inside an object 
+    const object1 = {
+      num:2,
+      fun: function(){
+        console.log('hello function of object 1');
+      }
+    };
+    object1.fun();
+    //  - pass a value into a function
+    function display(param){
+      console.log(param);
+    }
+    display(100);
+    // - Callback : Passing a function into another function
+    function run(param){
+      param();
+    }
+    run(function(){
+      console.log('function into another function');
+    });
+    //  - setTimeout() : a function we want to run in the future
+    setTimeout(function(){
+      console.log('timeout');
+    },3000);
+    // Asynchronous Code : won't wait for a line to finish before going to the next line
+    console.log('next line');
+    // Synchronous Code : will wait for one line to finish before going to the next line
+    // setInterval() : will keep running a function in the future
+    setInterval(function(){
+      console.log('interval');
+    },3000);
+    console.log('next line 2');
+    // forEach() is the preferred way to loop through an array
+    [
+      12,30,45,70,90].forEach(function(value,index){
+      console.log(index+ ' : '+value);
+    });
+  </script>
+</body>
+</html>

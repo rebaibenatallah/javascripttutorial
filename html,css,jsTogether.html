@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>html,css,and JavaScript Together</title>
+  <style>
+    body{
+      font-family: arial;
+    }
+    .subscribe {
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 30px ;
+    }
+    .is-subscribed {
+      background-color: rgb(240,240, 240);
+      color: black;
+    }
+    .input {
+      font-size: 15px;
+      padding: 10px;
+    }
+    .calculate-button {
+      border: none;
+      background-color: green;
+      color: white;
+      padding: 12px 15px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Subscribe Button</h1>
+  <button class="subscribe" onclick="
+  sub()
+  ">Subscribe</button>
+  <h1>Rock Paper Scissors</h1>
+  <a href="">Click here</a>
+  <h1>Amazon Shipping Calculator</h1>
+  <h1>Orders under $40 = +$10 shipping.</h1>
+  <h1>Orders over $40 = FREE shipping.</h1>
+  <input  class="input" onkeydown="
+  console.log(event.key);
+  if(event.key =='Enter'){
+    calculate();
+  }"
+   type="text" placeholder="Cost of order">
+  <button class="calculate-button" onclick="calculate()">Calculate</button>
+  <h1 class="result"></h1>
+  <br>
+  <a href="">CSS version of these projects</a>
+  <script>
+    const buttonSubscribe = document.querySelector('.subscribe');
+    function sub(){
+      if(buttonSubscribe.innerHTML === 'Subscribe'){
+        buttonSubscribe.innerHTML = 'Subscribed';
+        buttonSubscribe.classList.add('is-subscribed');
+      }else{
+        buttonSubscribe.innerHTML = 'Subscribe';
+        buttonSubscribe.classList.remove('is-subscribed');
+      }
+    }
+    
+  </script>
+</body>
+</html>
